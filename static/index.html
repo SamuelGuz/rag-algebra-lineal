@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Fonda de la Abuela · Laboratorio vectorial</title>
+  <link rel="stylesheet" href="/static/chat.css">
+  <link rel="stylesheet" href="/static/lab.css">
+</head>
+<body>
+  <main class="layout">
+    <!-- ============ CHAT ESTILO WHATSAPP ============ -->
+    <section class="phone" aria-label="Chat de pedidos">
+      <header class="wa-header">
+        <div class="avatar">🍲</div>
+        <div class="wa-title">
+          <strong id="restaurant-name">La Fonda de la Abuela</strong>
+          <span id="status">en línea</span>
+        </div>
+        <a class="wa-link" href="/cocina" target="_blank" title="Abrir panel de cocina">👨‍🍳 Cocina</a>
+        <button id="reset" class="wa-icon" title="Nuevo chat">⟲</button>
+      </header>
+
+      <div id="cart" class="cart hidden">
+        <button id="cart-toggle" class="cart-bar">
+          <span>🛒 <b id="cart-count">0</b> productos</span>
+          <span id="cart-total">$0</span>
+        </button>
+        <ul id="cart-items" class="cart-items hidden"></ul>
+      </div>
+
+      <div id="messages" class="messages"></div>
+
+      <div id="chips" class="chips">
+        <button>Algo calientito con pollo</button>
+        <button>¿Qué tienen vegetariano?</button>
+        <button>Algo del Caribe con pescado</button>
+        <button>Un postre con arequipe</button>
+      </div>
+
+      <form id="composer" class="composer" autocomplete="off">
+        <input id="input" placeholder="Escribe un mensaje" maxlength="500">
+        <button id="send" type="submit" aria-label="Enviar">➤</button>
+      </form>
+    </section>
+
+    <!-- ============ LABORATORIO VECTORIAL ============ -->
+    <section class="lab" aria-label="Laboratorio vectorial">
+      <header class="lab-head">
+        <div>
+          <h1><span>Laboratorio vectorial</span></h1>
+          <p>Lo que hace la base de datos vectorial con cada búsqueda, contado con álgebra lineal: vectores, producto punto, matrices y números complejos.</p>
+        </div>
+        <div class="row" style="align-items:center">
+          <form id="explorer" class="explorer" autocomplete="off">
+            <input id="explorer-input" placeholder="Busca directo en ChromaDB (sin IA)…" maxlength="200">
+            <button class="btn" type="submit">Buscar</button>
+          </form>
+          <select id="speed" class="speed" title="Velocidad de las animaciones">
+            <option value="0.5">🐢 Lento</option>
+            <option value="1" selected>Normal</option>
+            <option value="2.5">⚡ Rápido</option>
+          </select>
+        </div>
+      </header>
+
+      <nav id="pipeline" class="pipeline"></nav>
+      <div id="trace-tabs" class="trace-tabs"></div>
+      <nav id="tabs" class="tabs"></nav>
+      <div id="stage" class="stage"></div>
+    </section>
+  </main>
+  <script src="/static/lab.js"></script>
+  <script src="/static/chat.js"></script>
+</body>
+</html>

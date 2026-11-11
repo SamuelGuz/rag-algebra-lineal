@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cocina · La Fonda de la Abuela</title>
+  <style>
+    :root { font-family: "Segoe UI", system-ui, Roboto, Arial, sans-serif; color: #1d232a; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f3f4f6; }
+    header { background: #008069; color: #fff; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { margin: 0; font-size: 20px; }
+    header a { color: #fff; font-size: 14px; }
+    .board { display: grid; grid-template-columns: repeat(4, minmax(220px, 1fr)); gap: 14px; padding: 16px; overflow-x: auto; }
+    .col { background: #e5e7eb; border-radius: 10px; padding: 10px; min-height: 70vh; }
+    .col h2 { margin: 2px 4px 10px; font-size: 14px; text-transform: uppercase; letter-spacing: .04em; display: flex; justify-content: space-between; }
+    .col[data-estado="recibido"] h2 { color: #b45309; }
+    .col[data-estado="preparando"] h2 { color: #1d4ed8; }
+    .col[data-estado="listo"] h2 { color: #047857; }
+    .col[data-estado="entregado"] h2 { color: #6b7280; }
+    .order { background: #fff; border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+    .order.new { animation: flash 1.6s ease-out; }
+    @keyframes flash { from { box-shadow: 0 0 0 4px #fbbf24; } to { box-shadow: 0 1px 2px rgba(0,0,0,.08); } }
+    .order .top { display: flex; justify-content: space-between; font-weight: 600; }
+    .order .time { color: #6b7280; font-size: 12px; font-weight: 400; }
+    .order ul { margin: 8px 0; padding-left: 18px; font-size: 14px; }
+    .order .note { color: #b45309; font-size: 12px; }
+    .order .bottom { display: flex; justify-content: space-between; align-items: center; }
+    .order button { border: 0; background: #008069; color: #fff; border-radius: 6px; padding: 6px 10px; cursor: pointer; font: inherit; font-size: 13px; }
+    .empty { color: #6b7280; font-size: 13px; text-align: center; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>👨‍🍳 Cocina · La Fonda de la Abuela</h1>
+    <a href="/" target="_blank">Abrir chat de pedidos</a>
+  </header>
+  <main id="board" class="board"></main>
+  <script src="/static/cocina.js"></script>
+</body>
+</html>
